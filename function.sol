@@ -13,6 +13,7 @@ contract Animal {
   uint public _money;
 
   function test() constant returns(uint){
+      this._money;
       return _weight;
   }
   function test1() constant public returns(uint){
@@ -26,6 +27,34 @@ contract Animal {
   }
   function testInternal() constant returns(uint){
     //return this.test(); //用指针去访问只能访问public修饰的
-    return this.test1();
+    /* return this.test1(); */
+    return test2();//直接访问内部函数什么都不加直接返回方法名
+
   }
+}
+
+contract Animal1 {
+  uint _sex;//1为雌0为雄
+  function Animal1() {
+    _sex=1;
+  }
+  function sex()  constant returns(uint){
+    return _sex;
+  }
+}
+//继承 extends
+contract Dig is Animal,Animal1 {
+  function testWeight() constant returns(uint){
+    return _weight;
+  }
+  function testHeight() constant returns(uint){
+    return _height;
+  }
+  function testAge() constant returns(uint){
+      return _age;
+  }
+  function testMoney() constant returns(uint){
+      return _money;
+  }
+
 }
