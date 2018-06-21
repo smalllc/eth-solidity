@@ -24,6 +24,7 @@ contract variableArrays {
    }
    function clearBytes() {
      //两种方法 1. b.length=0;
+     //2.调用内置关键字
      delete b;
    }
    // 可变数组的定长 push方法
