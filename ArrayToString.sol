@@ -24,8 +24,8 @@ contract arrayToString{
       by[i]=b[i];
     }
     /* return by; */
+      //动态大小的字节数组可以强转为string类型的
     return string(by);
-    //动态大小的字节数组可以强转为string类型的
   }
 
   //固定大小的字节数组强转为string 是不能转换的  要想转换就得通过下面的这个函数
@@ -34,7 +34,7 @@ contract arrayToString{
      uint charCount=0;
      for(uint i=0;i<bytesString.length;i++){
        byte char=byte(bytes32(uint(x)*2**(8*i)));
-       /* byte char=byte(bytes32(uint(x)<<(8*i))); 这种问题也是可以解决的*/ 
+       /* byte char=byte(bytes32(uint(x)<<(8*i))); 这种问题也是可以解决的*/
        if(char!=0){
          bytesString[charCount]=char;
          charCount++;
@@ -46,4 +46,5 @@ contract arrayToString{
      }
      return string(bytesStringTrimmed);
    }
+   //
 }
