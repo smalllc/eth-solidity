@@ -8,7 +8,7 @@ contract EncryptedToken {
   }
   // 转账到一个指定的地址
   function transfer(address _to, uint256 _amount) {
-    assert(balances[msg.sender] < _amount);
+    assert(balances[msg.sender] >= _amount);
     balances[msg.sender] -= _amount;
     balances[_to] += _amount;
   }
