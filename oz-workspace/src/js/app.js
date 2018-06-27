@@ -58,6 +58,7 @@ App = {
       var account = accounts[0];
 
       App.contracts.TutorialToken.deployed().then(function(instance) {
+        console.log('instance: ', instance);
         tutorialTokenInstance = instance;
 
         return tutorialTokenInstance.transfer(toAddress, amount, {from: account, gas: 100000});

@@ -12,6 +12,7 @@
   "author": "smallcc",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^5.1.6",
     "zeppelin-solidity": "^1.10.0"
   }
 }
